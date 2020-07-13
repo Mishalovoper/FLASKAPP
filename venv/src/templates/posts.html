@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block additionalhead %}
+
+<link rel="stylesheet" href="../{{url_for('static', filename='main.css')}}">
+{% endblock additionalhead %}
+{% block body %}
+<h1> This is where posts are!</h1>
+
+{% for post in posts %}
+<h1>The Title is : {{post['title']}}</h1>
+{% if post['author']: %}
+<h3> The author is {{post['author']}}</h3>
+{% else %}
+<h3>Author N/A</h3>
+{% endif %}
+{% endfor %}
+
+{% endblock body %}
